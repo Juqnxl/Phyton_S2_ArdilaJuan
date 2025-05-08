@@ -1,3 +1,9 @@
+###################################
+############## Dia 2 ##############
+###################################
+
+# Algoritmo para calcular el promedio de una lista de numeros
+
 # Ingresamos numeros separados por comas
 entrada = input("Ingrese una lista de numeros, separados por comas: ")
 
@@ -10,3 +16,5 @@ promedio = suma / len(numeros)
 
 # Mostramos resultado
 print("El promedio es: ", promedio)
+
+# Juan Esteban Ardila Serrano T.I. 1.097.496.297

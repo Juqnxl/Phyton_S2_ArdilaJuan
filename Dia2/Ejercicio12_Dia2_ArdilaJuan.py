@@ -1,3 +1,9 @@
+###################################
+############## Dia 2 ##############
+###################################
+
+# Pedido de hamburguesas custom rappid
+
 total = 0 
 
 # Personaliza tu hamburguesa c:
@@ -88,3 +94,5 @@ servicio = total * 0.10
 print("El 10% de servicio: $", servicio)
 total += servicio
 print("Total a pagar: $", total)
+
+# Juan Esteban Ardila Serrano T.I. 1.097.496.297

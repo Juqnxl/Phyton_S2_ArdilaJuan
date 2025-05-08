@@ -1,3 +1,9 @@
+###################################
+############## Dia 2 ##############
+###################################
+
+# Algoritmo para verificar si un numero es primo
+
 # Ingresa un numero
 numero = int(input("Ingrese un numero: "))
 
@@ -19,3 +25,5 @@ if Es_primo:
     print("Es un numero primo")
 else:
     print("No es un numero primo")
+
+# Juan Esteban Ardila Serrano T.I. 1.097.496.297

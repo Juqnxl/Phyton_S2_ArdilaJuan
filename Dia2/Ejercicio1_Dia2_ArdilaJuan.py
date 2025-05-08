@@ -1,3 +1,10 @@
+
+###################################
+############## Dia 2 ##############
+###################################
+
+# Algoritmo para sumar dos numeros
+
 # Pedimos que ingrese primer numero
 num1 = input("Ingrese el primer numero: ")
 
@@ -13,3 +20,5 @@ suma = num1 + num2
 
 # Mostramos el resultado
 print("La suma es: ",suma)
+
+# Juan Esteban Ardila Serrano T.I. 1.097.496.297
