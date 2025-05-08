@@ -4,6 +4,8 @@
 
 # Finding the percentage
 
+if __name__ == '__main__':
+
 # lee numero de estudiantes
 n = int(input())
 
