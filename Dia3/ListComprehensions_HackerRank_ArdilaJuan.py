@@ -4,6 +4,8 @@
 
 # List Comprehensions
 
+if __name__ == '__main__':
+
 # ubicaciones
 x = int(input())
 y = int(input())
