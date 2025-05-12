@@ -4,7 +4,9 @@
 
 # Loops
 
- # lee numeros enteros
+if __name__ == '__main__':
+
+# lee numeros enteros
 n = int(input())
 
 # dar el cuadro del numero de 0 hasta n-1
