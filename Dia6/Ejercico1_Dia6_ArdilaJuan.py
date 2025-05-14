@@ -16,10 +16,12 @@ print(type(miPrimerDiccionario))
 # para recorrer un DICcionario debes llamar a la llave
 print(miPrimerDiccionario["nombre"])
 print(type(miPrimerDiccionario["nombre"]))
+
 # Se puede recorrer con puntos en algunos casos
 '''
 print(miPrimerDiccionario.nombre)
 '''
+
 # para reemplazar un valor del diccionario
 miPrimerDiccionario["nombre"]="Juan"
 nombre = miPrimerDiccionario["nombre"]
@@ -54,9 +56,9 @@ print(listaPersonas[0]["edad"])
 
 # recorrer listas con diccionarios
 for i in range(len(listaPersonas)):
-    print("#################")
-    print("####Persona #",i+1," ####")
-    print("#################")
+    print("===============")
+    print("=== Persona ===",i+1," ====")
+    print("===============")
     print("Nombre:",listaPersonas[i]["nombre"])
     print("Apllido:",listaPersonas[i]["apellido"])
     print("Edad:",listaPersonas[i]["edad"])
@@ -67,16 +69,16 @@ diccionarioRobusto={
     "nombre":"Juan",
     "apellido":"Ardila",
     "edad":18,
-    "telefonos":[{"codigo":57,"numero":3108698155,"tipo":"trabajo"},
-                 {"codigo":57,"numero":3108698155,"tipo":"personal"}]
+    "tel":[{"codigo":57,"num":3108698155,"tipo":"trabajo"},
+                 {"codigo":57,"num":3108698155,"tipo":"personal"}]
 }
 diccionarioRobusto2={
     "id":2,
     "nombre":"Corpus",
     "apellido":"Bejarano",
     "edad":27,
-    "telefonos":[{"codigo":58,"numero":2323057565,"tipo":"trabajo"},
-                 {"codigo":22,"numero":6857493658,"tipo":"personal"}]
+    "tel":[{"codigo":58,"num":2323057565,"tipo":"trabajo"},
+                 {"codigo":22,"num":6857493658,"tipo":"personal"}]
 }
 listaRobusta=[]
 listaRobusta.append(diccionarioRobusto)
@@ -87,74 +89,77 @@ print(listaRobusta)
 print("")
 print("")
 
-for i in range(len(listaRobusta[0]["telefonos"])):
-    if(listaRobusta[0]["telefonos"][i]['tipo']=="trabajo"):
-        print(listaRobusta[0]["telefonos"][i]['numero'])
+for i in range(len(listaRobusta[0]["tel"])):
+    if(listaRobusta[0]["tel"][i]['tipo']=="trabajo"):
+        print(listaRobusta[0]["tel"][i]['num'])
 print("")
 print("")
-numeroPrimeraPersona=listaRobusta[0]["telefonos"][1]['numero']
-tipoNumeroPP=listaRobusta[0]["telefonos"][1]['tipo']
-print(str(numeroPrimeraPersona)+ tipoNumeroPP)
+numPrimeraPersona=listaRobusta[0]["tel"][1]['num']
+tiponumPP=listaRobusta[0]["tel"][1]['tipo']
+print(str(numPrimeraPersona)+ tiponumPP)
 
 booleanito = True
 while(booleanito):
-    print("#################")
-    print("#### Librería de personas ####")
-    print("#################")
+    print("==============================")
+    print("==== Librería de personas ====")
+    print("==============================")
     # crud (create,read,update y delete)
     print("1. Crear Persona")
     print("2. Mostrar todas las personas")
     print("3. Mostrar a una persona individual")
-    print("4. Actualizar a una persona en específico")
-    print("5. Eliminar a una persona en específico")
+    print("4. Actualizar a una persona en especifico")
+    print("5. Eliminar a una persona en especifico")
     print("6. Cerrar programa")
-    opcionUsuario=int(input("Escoja una opción (Numérica):"))
+    opcionUsuario=int(input("Escoja una opcion (Numerica):"))
 
+    # se crean personas
     if(opcionUsuario==1):
-        print("#################")
-        print("#### Crear Persona ####")
-        print("#################")
+        print("=======================")
+        print("==== Crear Persona ====")
+        print("=======================")
         diccionarioVacio = {}
         diccionarioVacio["id"] = int(input("ID de la persona: "))
         diccionarioVacio["nombre"] = input("Nombre: ")
         diccionarioVacio["apellido"] = input("Apellido: ")
         diccionarioVacio["edad"] = int(input("Edad: "))
-        diccionarioVacio["telefonos"] = []
-        cantidadTelefonos = int(input("¿Cuántos teléfonos desea agregar?: "))
-        for i in range(cantidadTelefonos):
+        diccionarioVacio["tel"] = []
+        cantidadtel = int(input("Cuantos telefonos desea agregar?: "))
+        for i in range(cantidadtel):
             telefono = {}
-            telefono["codigo"] = int(input("Código del teléfono: "))
-            telefono["numero"] = int(input("Número del teléfono: "))
-            telefono["tipo"] = input("Tipo de teléfono (personal/trabajo): ")
-            diccionarioVacio["telefonos"].append(telefono)
+            telefono["codigo"] = int(input("Codigo del telefono: "))
+            telefono["num"] = int(input("Número del telefono: "))
+            telefono["tipo"] = input("Tipo de telefono (personal/trabajo): ")
+            diccionarioVacio["tel"].append(telefono)
         listaRobusta.append(diccionarioVacio)
-        print("Persona creada exitosamente.")
-
+        print("Persona creada exitosamente")
+        
+        # mostrar todas las personas que estan agregadas al directorio
     elif(opcionUsuario==2):
         for i in range(len(listaRobusta)):
-            print("#################")
-            print("#### Persona #",i+1," ####")
-            print("#################")
+            print("=================")
+            print("==== Persona ====",i+1," ====")
+            print("=================")
             print("ID:", listaRobusta[i]["id"])
             print("Nombre:",listaRobusta[i]["nombre"])
             print("Apellido:",listaRobusta[i]["apellido"])
             print("Edad",listaRobusta[i]["edad"])
             
-            for q in range(len(listaRobusta[i]["telefonos"])):
+            for q in range(len(listaRobusta[i]["tel"])):
                 print("---------------------------")
-                print("Telefono#",q+1,":")
-                print("#### - Código:",listaRobusta[i]["telefonos"][q]["codigo"])
-                print("#### - Numero:",listaRobusta[i]["telefonos"][q]["numero"])
-                if(listaRobusta[i]["telefonos"][q]["tipo"] == "personal"):
-                    print("#### - Tipo: Es su número Personal")
+                print("Telefono=",q+1,":")
+                print("==== - Código:",listaRobusta[i]["tel"][q]["codigo"])
+                print("==== - num:",listaRobusta[i]["tel"][q]["num"])
+                if(listaRobusta[i]["tel"][q]["tipo"] == "personal"):
+                    print("==== - Tipo: Es su numero Personal")
                 else:
-                    print("#### - Tipo: Es su número de Trabajo")
+                    print("==== - Tipo: Es su numero de Trabajo")
                 print("---------------------------")
 
+    # mostrar las personas que se encuentran en el directorio en individual
     elif(opcionUsuario==3):
-        print("#################")
-        print("#### Mostrar Persona Individual ####")
-        print("#################")
+        print("====================================")
+        print("==== Mostrar Persona Individual ====")
+        print("====================================")
         idBuscado = int(input("Ingrese el ID de la persona: "))
         personaEncontrada = None
         for persona in listaRobusta:
@@ -165,37 +170,39 @@ while(booleanito):
             print("Nombre:", personaEncontrada["nombre"])
             print("Apellido:", personaEncontrada["apellido"])
             print("Edad:", personaEncontrada["edad"])
-            for tel in personaEncontrada["telefonos"]:
+            for tel in personaEncontrada["tel"]:
                 print("Código:", tel["codigo"])
-                print("Número:", tel["numero"])
+                print("Número:", tel["num"])
                 print("Tipo:", tel["tipo"])
         else:
-            print("No se encontró una persona con ese ID.")
+            print("No se encontro una persona con ese ID")
 
+    # actulizar la informacion de una persona en especifico
     elif(opcionUsuario==4):
-        print("#################")
-        print("#### Actualizar Persona ####")
-        print("#################")
+        print("============================")
+        print("==== Actualizar Persona ====")
+        print("============================")
         idActualizar = int(input("Ingrese el ID de la persona a actualizar: "))
         for persona in listaRobusta:
             if persona["id"] == idActualizar:
                 persona["nombre"] = input("Nuevo nombre: ")
                 persona["apellido"] = input("Nuevo apellido: ")
                 persona["edad"] = int(input("Nueva edad: "))
-                for i, tel in enumerate(persona["telefonos"]):
-                    print(f"Teléfono #{i+1}")
-                    tel["codigo"] = int(input("Nuevo código: "))
-                    tel["numero"] = int(input("Nuevo número: "))
+                for i, tel in enumerate(persona["tel"]):
+                    print(f"Teléfono ={i+1}")
+                    tel["codigo"] = int(input("Nuevo codigo: "))
+                    tel["num"] = int(input("Nuevo numero: "))
                     tel["tipo"] = input("Nuevo tipo (personal/trabajo): ")
                 print("Persona actualizada correctamente")
                 break
         else:
             print("No se encontro una persona con ese ID")
 
+    # elminar una persona en especifico        
     elif(opcionUsuario==5):
-        print("#################")
-        print("#### Eliminar Persona ####")
-        print("#################")
+        print("==========================")
+        print("==== Eliminar Persona ====")
+        print("==========================")
         idEliminar = int(input("Ingrese el ID de la persona a eliminar: "))
         for i in range(len(listaRobusta)):
             if listaRobusta[i]["id"] == idEliminar:
@@ -209,6 +216,6 @@ while(booleanito):
         print("Chaousssss")
         booleanito=False
     else:
-        print("No es una opción válida")
+        print("No es una opción valida")
 
 # Juan Esteban Ardila Serrano T.I. 1.097.496.297
